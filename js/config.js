@@ -39,7 +39,7 @@ const PORTFOLIO_CONFIG = {
   contact: {
     email: "adarshkumarsingh@gmail.com",
     // Replace with your actual URLs before deployment
-    linkedin: "https://www.linkedin.com/in/adarsh-kumar-singh-placeholder",
+    linkedin: "https://www.linkedin.com/in/adarsh-kumar-singh-a40753395/",
     linkedinDisplay: "LinkedIn ↗",
     github: "https://github.com/adarsh-kumar-singh-placeholder",
     githubDisplay: "GitHub ↗",
