@@ -41,7 +41,7 @@ const PORTFOLIO_CONFIG = {
     // Replace with your actual URLs before deployment
     linkedin: "https://www.linkedin.com/in/adarsh-kumar-singh-a40753395/",
     linkedinDisplay: "LinkedIn ↗",
-    github: "https://github.com/adarsh-kumar-singh-placeholder",
+    github: "https://github.com/BugintheSystem704",
     githubDisplay: "GitHub ↗",
     resumeDisplay: "Download Resume ↗",
     note: "Interested in software development, practical projects, or technical collaboration."
