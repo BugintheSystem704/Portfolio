@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO & Metadata -->
+  <title>Adarsh Kumar Singh — Software Engineering Portfolio</title>
+  <meta name="description" content="Personal software engineering portfolio of Adarsh Kumar Singh, 2nd-year B.Tech CSE student at Lovely Professional University. Detailed case studies in web development, multiplayer applications, and IoT.">
+  <meta name="author" content="Adarsh Kumar Singh">
+  <meta name="keywords" content="Adarsh Kumar Singh, Software Engineer, Portfolio, Computer Science, LPU, Web Development, IoT, Python, JavaScript, ESP32, Firebase">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adarsh Kumar Singh — Software Engineering Portfolio">
+  <meta property="og:description" content="Personal software engineering portfolio of Adarsh Kumar Singh. Detailed project case studies across web, multiplayer applications, and IoT.">
+  <meta property="og:image" content="assets/adarsh-photo.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Instrument Serif & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Subtle Paper Background Texture -->
+  <div class="paper-texture" aria-hidden="true"></div>
+
+  <!-- Minimal Editorial Navigation Header (Matching Screenshot 1) -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="Adarsh Kumar Singh Home">
+        ADARSH KUMAR SINGH
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Rightmost Resume Action -->
+      <div class="nav-actions">
+        <a href="assets/Adarsh_Kumar_Singh_Resume.pdf" class="nav-resume-action" id="nav-resume-btn" download target="_blank" rel="noopener noreferrer">
+          <span>Resume ↗</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+    
+    <!-- ====================================================================
+         HERO SECTION (EXACT REPRODUCTION OF SCREENSHOT 1)
+         ==================================================================== -->
+    <section class="hero-section" id="home" aria-labelledby="hero-name-first">
+      <div class="container">
+        <div class="hero-editorial-grid">
+          
+          <!-- Hero Left / Typography & Positioning -->
+          <div class="hero-left">
+            <span class="hero-eyebrow">COMPUTER SCIENCE · LPU · 2025–2029</span>
+
+            <div class="hero-name-block">
+              <h1 class="hero-name-first" id="hero-name-first">Adarsh</h1>
+              <span class="hero-name-last">Kumar Singh</span>
+            </div>
+
+            <p class="hero-statement">
+              Software Engineer in progress, building practical software across web, IoT and emerging AI/ML.
+            </p>
+
+            <div class="hero-academic-line">
+              B.Tech Computer Science & Engineering · CGPA 9.2
+            </div>
+
+            <div class="hero-actions">
+              <a href="#work" class="hero-btn-primary">
+                <span>View Selected Work</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="assets/Adarsh_Kumar_Singh_Resume.pdf" class="hero-btn-secondary" download target="_blank" rel="noopener noreferrer">
+                <span>Resume ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right / Layered Editorial Portrait Frame -->
+          <div class="hero-right">
+            <div class="portrait-layered-wrapper">
+              <!-- Asymmetric Offset Plum Backing Panel -->
+              <div class="portrait-backdrop-plum" aria-hidden="true"></div>
+
+              <!-- Main Foreground Card -->
+              <div class="portrait-frame-main">
+                <img src="assets/adarsh-photo.jpg" 
+                     alt="Portrait of Adarsh Kumar Singh" 
+                     id="hero-portrait-img"
+                     loading="eager"
+                     onerror="this.style.display='none'; document.getElementById('hero-portrait-fallback').style.display='flex';">
+                
+                <!-- Editorial Silhouette Fallback (Matching Screenshot 1) -->
+                <div class="portrait-neutral-placeholder" id="hero-portrait-fallback" style="display: none;">
+                  <div class="portrait-monogram">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div class="portrait-caption-title">ADARSH KUMAR SINGH</div>
+                  <div class="portrait-caption-sub">CSE Undergraduate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ABOUT SECTION (EXACT REPRODUCTION OF SCREENSHOT 2)
+         ==================================================================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-editorial-layout">
+          
+          <!-- Left Column Title -->
+          <h2 class="about-left-title" id="about-heading">ABOUT</h2>
+
+          <!-- Right Column Narrative -->
+          <div class="about-right-content">
+            <p class="about-lead-p">
+              I am a second-year B.Tech Computer Science and Engineering student at Lovely Professional University. I enjoy learning by building — from browser-based multiplayer applications to hardware-focused IoT systems.
+            </p>
+            <p class="about-lead-p">
+              My current focus is strengthening software development fundamentals while beginning my work with Python and Machine Learning. I enjoy taking ideas through their initial implementation challenges to create reliable, working software.
+            </p>
+
+            <!-- Prominent Serif Pullquote Between Thin Dividers -->
+            <blockquote class="about-pullquote">
+              "From concept to a working product."
+            </blockquote>
+
+            <!-- Three Clean Typographic Facts -->
+            <div class="about-facts-row">
+              <div class="about-fact-block">
+                <span class="fact-title-label">EDUCATION</span>
+                <span class="fact-title-value">B.Tech CSE</span>
+              </div>
+
+              <div class="about-fact-block">
+                <span class="fact-title-label">ACADEMIC</span>
+                <span class="fact-title-value">9.2 CGPA</span>
+              </div>
+
+              <div class="about-fact-block">
+                <span class="fact-title-label">CURRENT FOCUS</span>
+                <span class="fact-title-value">Software Dev + AI/ML</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         SKILLS SECTION (CONCISE TECHNICAL STACK)
+         ==================================================================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <span class="section-eyebrow">CAPABILITIES</span>
+        <h2 class="section-heading-large" id="skills-heading">Technical Stack</h2>
+        <p class="section-subtext">Verified tools, languages, and platforms applied in coursework and projects.</p>
+
+        <!-- Horizontal Numbered Spec Rows -->
+        <div class="skills-editorial-wrapper">
+          <div class="skills-row-list">
+            
+            <div class="skills-row-item">
+              <span class="skill-row-num">01</span>
+              <span class="skill-row-category">LANGUAGES</span>
+              <span class="skill-row-techs">Python · C · C++ · JavaScript</span>
+            </div>
+
+            <div class="skills-row-item">
+              <span class="skill-row-num">02</span>
+              <span class="skill-row-category">WEB & PLATFORM</span>
+              <span class="skill-row-techs">HTML · CSS · Firebase</span>
+            </div>
+
+            <div class="skills-row-item">
+              <span class="skill-row-num">03</span>
+              <span class="skill-row-category">HARDWARE</span>
+              <span class="skill-row-techs">ESP32 · IoT · Sensors</span>
+            </div>
+
+            <div class="skills-row-item">
+              <span class="skill-row-num">04</span>
+              <span class="skill-row-category">TOOLS</span>
+              <span class="skill-row-techs">Git · GitHub · VS Code</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Currently Learning Subtle Strip -->
+        <div class="skills-learning-strip">
+          <span class="learning-label">CURRENTLY LEARNING</span>
+          <div class="learning-items-group">
+            <span class="learning-pill">Python for ML</span>
+            <span class="learning-pill">NumPy</span>
+            <span class="learning-pill">Machine Learning</span>
+            <span class="learning-pill">Full-Stack Development</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         SELECTED WORK (PROJECTS — DOMINANT SECTION WITH DEEP CASE STUDIES)
+         Framework: PROBLEM → TECHNOLOGY → RESULT → LEARNING
+         ==================================================================== -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <span class="section-eyebrow">PORTFOLIO</span>
+        <h2 class="section-heading-large" id="work-heading">Selected Work</h2>
+        <p class="section-subtext">
+          What I can actually do, how I built it, what problems I encountered, what decisions I made, and what I learned.
+        </p>
+
+        <!-- Project Quick Jump Navigation -->
+        <div class="projects-quick-nav" role="navigation" aria-label="Project case study shortcuts">
+          <a href="#project-tiki-topple" class="project-jump-link">01 · TIKI TOPPLE</a>
+          <a href="#project-safety-shoe" class="project-jump-link">02 · SMART SAFETY SHOE</a>
+          <a href="#project-navyugal" class="project-jump-link">03 · NAVYUGAL</a>
+        </div>
+
+        <div class="projects-container-stack">
+          
+          <!-- --------------------------------------------------------------
+               PROJECT 01: TIKI TOPPLE (DETAILED CASE STUDY)
+               -------------------------------------------------------------- -->
+          <article class="project-case-study-entry" id="project-tiki-topple">
+            <!-- Top Hero Split -->
+            <div class="case-study-hero-split">
+              <div class="case-study-visual-frame">
+                <img src="assets/tiki-topple.png" 
+                     alt="Tiki Topple multiplayer board game digital screenshot" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="portrait-neutral-placeholder" style="display: none;">
+                  <div class="portrait-caption-title">Tiki Topple</div>
+                  <div class="portrait-caption-sub">Digital Board Game Preview</div>
+                </div>
+              </div>
+
+              <div class="case-study-header-info">
+                <div class="case-meta-line">
+                  <span>01</span>
+                  <span>·</span>
+                  <span class="case-category-tag">MULTIPLAYER DIGITAL BOARD GAME</span>
+                  <span>·</span>
+                  <span style="color: var(--status-completed); font-size: 0.75rem;">Completed</span>
+                </div>
+
+                <h3 class="case-title">Tiki Topple</h3>
+
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill">HTML</span>
+                  <span class="tech-tag-pill">CSS</span>
+                  <span class="tech-tag-pill">JavaScript</span>
+                  <span class="tech-tag-pill">Firebase</span>
+                </div>
+
+                <p class="case-short-desc">
+                  Developed a browser-based digital adaptation of the Tiki Topple tactical board game for 2–4 players.
+                </p>
+
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                  Repository — Private
+                </div>
+              </div>
+            </div>
+
+            <!-- Deep Case Study Body -->
+            <div class="case-study-deep-body">
+              
+              <!-- 1. The Problem -->
+              <div class="case-section-item">
+                <div class="case-section-label">THE PROBLEM</div>
+                <p class="case-text-block">
+                  The challenge was to translate a physical board-game experience into an interactive browser-based multiplayer experience while preserving the original gameplay mechanics.
+                </p>
+              </div>
+
+              <!-- 2. The Approach -->
+              <div class="case-section-item">
+                <div class="case-section-label">THE APPROACH</div>
+                <p class="case-text-block">
+                  The game was recreated digitally with the core gameplay structure preserved, while selected physical interactions were adapted for a screen-based interface.
+                </p>
+              </div>
+
+              <!-- 3. My Role -->
+              <div class="case-section-item">
+                <div class="case-section-label">MY ROLE</div>
+                <div class="role-tags-list">
+                  <span class="role-pill">Game implementation</span>
+                  <span class="role-pill">Gameplay/UI adaptation</span>
+                  <span class="role-pill">Firebase multiplayer functionality</span>
+                  <span class="role-pill">Asset integration</span>
+                  <span class="role-pill">Audio integration</span>
+                  <span class="role-pill">Interface refinement</span>
+                </div>
+              </div>
+
+              <!-- 4. Technical Implementation -->
+              <div class="case-section-item">
+                <div class="case-section-label">TECHNICAL IMPLEMENTATION</div>
+                <div class="case-bullet-list">
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">▸</span>
+                    <span>Implemented Firebase-based room creation and unique room-code joining to allow multiple players to enter the same game session.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">▸</span>
+                    <span>Translated the physical board representation into a level-based digital structure where progression could be represented clearly on screen.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">▸</span>
+                    <span>Integrated game imagery, visual assets and audio elements to enhance player feedback.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">▸</span>
+                    <span>Modified selected interactions where directly reproducing the physical board would negatively affect the digital interface.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Result -->
+              <div class="case-section-item">
+                <div class="case-section-label">RESULT</div>
+                <p class="case-text-block">
+                  Produced a playable browser-based multiplayer version of the game supporting 2–4 players.
+                </p>
+              </div>
+
+              <!-- 6. What I Learned -->
+              <div class="case-section-item">
+                <div class="case-section-label">WHAT I LEARNED</div>
+                <p class="case-text-block">
+                  This project taught me that reproducing a physical experience digitally is not always a matter of copying it exactly. Some interactions need to be redesigned around the constraints of the interface while preserving the original experience.
+                </p>
+              </div>
+
+              <!-- 7. Tech Stack -->
+              <div class="case-section-item">
+                <div class="case-section-label">TECH STACK</div>
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill">HTML</span>
+                  <span class="tech-tag-pill">CSS</span>
+                  <span class="tech-tag-pill">JavaScript</span>
+                  <span class="tech-tag-pill">Firebase</span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- --------------------------------------------------------------
+               PROJECT 02: SMART SAFETY SHOE (DARK PLUM BLOCK)
+               -------------------------------------------------------------- -->
+          <article class="project-case-study-entry-dark" id="project-safety-shoe">
+            <!-- Top Hero Split -->
+            <div class="case-study-hero-split-dark">
+              <div class="case-study-visual-frame-dark">
+                <img src="assets/safety-shoe.png" 
+                     alt="Smart Safety Shoe hardware prototype photograph" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="portrait-neutral-placeholder" style="display: none; background: #2D232B;">
+                  <div class="portrait-caption-title" style="color: #F5F1EA;">Smart Safety Shoe</div>
+                  <div class="portrait-caption-sub" style="color: #B58A4A;">IoT Prototype Photograph</div>
+                </div>
+              </div>
+
+              <div class="case-study-header-info">
+                <div class="case-meta-line">
+                  <span style="color: var(--accent-gold);">02</span>
+                  <span>·</span>
+                  <span style="color: var(--accent-gold);" class="case-category-tag">IOT EMERGENCY RESPONSE SYSTEM</span>
+                  <span>·</span>
+                  <span style="color: #818CF8; font-size: 0.75rem;">Completed Prototype</span>
+                </div>
+
+                <h3 class="case-title-dark">Smart Safety Shoe</h3>
+
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill-dark">ESP32</span>
+                  <span class="tech-tag-pill-dark">IoT Sensors</span>
+                  <span class="tech-tag-pill-dark">Reed Switch</span>
+                  <span class="tech-tag-pill-dark">Battery-Powered Hardware</span>
+                  <span class="tech-tag-pill-dark">MIT App Inventor</span>
+                </div>
+
+                <p class="case-short-desc-dark">
+                  Designed and developed a wearable IoT-based emergency response prototype that enables users to trigger an emergency workflow through a predefined triple-tap activation mechanism.
+                </p>
+
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-light-muted);">
+                  Hardware Prototype & Documentation
+                </div>
+              </div>
+            </div>
+
+            <!-- Deep Case Study Body -->
+            <div class="case-study-deep-body-dark">
+              
+              <!-- 1. The Problem -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">THE PROBLEM</div>
+                <p class="case-text-block-dark">
+                  The project explored how an emergency response could be triggered through a wearable interface when directly accessing a phone or conventional control may not be convenient.
+                </p>
+              </div>
+
+              <!-- 2. My Role (Explicit Boundaries) -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">MY ROLE</div>
+                <div class="role-tags-list">
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Research into existing safety solutions</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Analysis of related projects</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">System workflow design</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Hardware development</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Component integration</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Physical prototype development</span>
+                  <span class="role-pill" style="background: #2D232B; border-color: #3D333B; color: #F5F1EA;">Fitting electronics into the shoe</span>
+                </div>
+                <div class="team-note-text" style="color: var(--text-light-muted); border-color: #3D333B;">
+                  Note: A teammate handled the primary coding/mobile application work.
+                </div>
+              </div>
+
+              <!-- 3. Technical Implementation & System Flow -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">TECHNICAL IMPLEMENTATION & SYSTEM FLOW</div>
+                
+                <!-- Simple System Workflow Diagram -->
+                <div class="simple-flow-diagram" aria-label="Safety Shoe Emergency Response Architecture">
+                  <div class="diagram-steps-grid">
+                    <div class="flow-step-box">
+                      <span class="flow-num">01</span>
+                      <span class="flow-title">TRIPLE TAP</span>
+                      <span class="flow-desc">Mechanical reed switch actuation</span>
+                    </div>
+                    <div class="flow-step-box">
+                      <span class="flow-num">02</span>
+                      <span class="flow-title">TRIGGER</span>
+                      <span class="flow-desc">ESP32 sequence logic validation</span>
+                    </div>
+                    <div class="flow-step-box">
+                      <span class="flow-num">03</span>
+                      <span class="flow-title">10-SECOND WINDOW</span>
+                      <span class="flow-desc">Cancellation buffer (if cancelled → normal)</span>
+                    </div>
+                    <div class="flow-step-box">
+                      <span class="flow-num">04</span>
+                      <span class="flow-title">LOCATION + CALL</span>
+                      <span class="flow-desc">Companion app dispatches GPS & call</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="case-bullet-list" style="margin-top: 16px;">
+                  <div class="case-bullet-row-dark">
+                    <span class="case-bullet-icon-dark">▸</span>
+                    <span><strong>Hardware Assembly:</strong> Integrated an ESP32 microcontroller, sensors, reed switch, and battery-powered circuitry within a wearable shoe.</span>
+                  </div>
+                  <div class="case-bullet-row-dark">
+                    <span class="case-bullet-icon-dark">▸</span>
+                    <span><strong>Two-Stage Alert Logic:</strong> Designed a two-stage alert mechanism incorporating a 10-second cancellation window to reduce accidental emergency activation (if cancelled → system returns to normal; if not cancelled → dispatches emergency call).</span>
+                  </div>
+                  <div class="case-bullet-row-dark">
+                    <span class="case-bullet-icon-dark">▸</span>
+                    <span><strong>Companion App Connection:</strong> Connected the hardware-triggered workflow with a companion mobile application capable of sharing real-time location and initiating an emergency call to a saved contact.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Key Engineering Challenge -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">KEY ENGINEERING CHALLENGE</div>
+                <p class="case-text-block-dark" style="color: var(--accent-gold); font-weight: 600;">
+                  "Fitting the electronics into a wearable shoe while keeping the prototype practical and usable."
+                </p>
+              </div>
+
+              <!-- 5. Result -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">RESULT</div>
+                <p class="case-text-block-dark">
+                  Produced a working wearable IoT safety prototype with a defined emergency activation and response workflow.
+                </p>
+              </div>
+
+              <!-- 6. What I Learned -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">WHAT I LEARNED</div>
+                <p class="case-text-block-dark">
+                  The project showed me that hardware engineering involves more than making the circuit work. Physical constraints, component placement, power requirements and usability all influence the final system.
+                </p>
+              </div>
+
+              <!-- 7. Tech Stack -->
+              <div class="case-section-item-dark">
+                <div class="case-section-label-dark">TECH STACK</div>
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill-dark">ESP32</span>
+                  <span class="tech-tag-pill-dark">IoT Sensors</span>
+                  <span class="tech-tag-pill-dark">Reed Switch</span>
+                  <span class="tech-tag-pill-dark">Battery-Powered Hardware</span>
+                  <span class="tech-tag-pill-dark">MIT App Inventor</span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- --------------------------------------------------------------
+               PROJECT 03: NAVYUGAL (IN DEVELOPMENT)
+               -------------------------------------------------------------- -->
+          <article class="project-case-study-entry" id="project-navyugal">
+            <!-- Top Hero Split -->
+            <div class="case-study-hero-split">
+              <div class="case-study-visual-frame">
+                <img src="assets/navyugal.png" 
+                     alt="NavYugal Event Discovery platform homepage screenshot" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="portrait-neutral-placeholder" style="display: none;">
+                  <div class="portrait-caption-title">NavYugal</div>
+                  <div class="portrait-caption-sub">Event Discovery Interface</div>
+                </div>
+              </div>
+
+              <div class="case-study-header-info">
+                <div class="case-meta-line">
+                  <span>03</span>
+                  <span>·</span>
+                  <span class="case-category-tag">EVENT MANAGEMENT PLATFORM</span>
+                  <span>·</span>
+                  <span style="color: var(--status-dev); font-size: 0.75rem;">In Development</span>
+                </div>
+
+                <h3 class="case-title">NavYugal</h3>
+
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill">HTML</span>
+                  <span class="tech-tag-pill">CSS</span>
+                  <span class="tech-tag-pill">JavaScript</span>
+                </div>
+
+                <p class="case-short-desc">
+                  Developing an event-management web platform focused on simplifying event discovery and helping users identify suitable event options.
+                </p>
+
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                  Frontend Repository — Active Work
+                </div>
+              </div>
+            </div>
+
+            <!-- Deep Case Study Body -->
+            <div class="case-study-deep-body">
+              
+              <!-- 1. Current Implementation -->
+              <div class="case-section-item">
+                <div class="case-section-label">CURRENT IMPLEMENTATION</div>
+                <div class="case-bullet-list">
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">✓</span>
+                    <span><strong>Homepage:</strong> Modular section structure with responsive layout.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">✓</span>
+                    <span><strong>Choose Your Event:</strong> Interactive selection interface for browsing event options.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">✓</span>
+                    <span><strong>Event Categories:</strong> Structured listing components by event scale and type.</span>
+                  </div>
+                  <div class="case-bullet-row">
+                    <span class="case-bullet-icon">✓</span>
+                    <span><strong>Frontend Interface & Navigation:</strong> Accessible client-side navigation structure.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Planned Platform Users -->
+              <div class="case-section-item">
+                <div class="case-section-label">PLANNED PLATFORM USERS</div>
+                <div class="role-tags-list">
+                  <span class="role-pill">Administrator</span>
+                  <span class="role-pill">Vendor</span>
+                  <span class="role-pill">Customer</span>
+                </div>
+                <div class="team-note-text">
+                  Planned stakeholder roles to be supported in future platform workflows.
+                </div>
+              </div>
+
+              <!-- 3. Development Progression & AI Exploration -->
+              <div class="case-section-item">
+                <div class="case-section-label">DEVELOPMENT PROGRESSION</div>
+                
+                <div class="navyugal-progression-box">
+                  <div class="progression-col">
+                    <span class="progression-tag tag-current">CURRENT</span>
+                    <span class="progression-title">Frontend Foundation</span>
+                    <span class="progression-item-p">• Homepage UI</span>
+                    <span class="progression-item-p">• Event discovery flow</span>
+                    <span class="progression-item-p">• Category selection</span>
+                  </div>
+
+                  <div class="progression-col">
+                    <span class="progression-tag tag-next">NEXT</span>
+                    <span class="progression-title">Backend Implementation</span>
+                    <span class="progression-item-p">• Event details workflows</span>
+                    <span class="progression-item-p">• User booking flows</span>
+                    <span class="progression-item-p">• Backend fundamentals</span>
+                  </div>
+
+                  <div class="progression-col">
+                    <span class="progression-tag tag-exploring">EXPLORING</span>
+                    <span class="progression-title">AI-Assisted Features</span>
+                    <span class="progression-item-p">• Exploring AI-assisted recommendations based on event type, requirements and budget.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Result -->
+              <div class="case-section-item">
+                <div class="case-section-label">RESULT</div>
+                <p class="case-text-block">
+                  Active development of the client-side event discovery experience and platform structure.
+                </p>
+              </div>
+
+              <!-- 5. What I Learned -->
+              <div class="case-section-item">
+                <div class="case-section-label">WHAT I LEARNED</div>
+                <p class="case-text-block">
+                  This project is helping me move from building individual interfaces toward thinking about how a complete product is structured, while strengthening my understanding of frontend development and preparing for backend implementation.
+                </p>
+              </div>
+
+              <!-- 6. Tech Stack -->
+              <div class="case-section-item">
+                <div class="case-section-label">TECH STACK</div>
+                <div class="case-tech-pills">
+                  <span class="tech-tag-pill">HTML</span>
+                  <span class="tech-tag-pill">CSS</span>
+                  <span class="tech-tag-pill">JavaScript</span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         TRAINING & COMMUNITY (EXPERIENCE ENTRY)
+         ==================================================================== -->
+    <section id="experience" aria-labelledby="exp-heading">
+      <div class="container">
+        <span class="section-eyebrow">COMMUNITY & TEACHING</span>
+        <h2 class="section-heading-large" id="exp-heading">Experience</h2>
+
+        <div class="experience-entry-box">
+          <div class="exp-header-row">
+            <div>
+              <h3 class="exp-title">Python Programming Trainer</h3>
+              <div class="exp-org">ApneLog · Community Development Project</div>
+            </div>
+            <div class="exp-dates">
+              25 June 2026 — 25 July 2026<br>
+              <strong>30 Hours</strong>
+            </div>
+          </div>
+
+          <p class="exp-desc">
+            Conducted structured Python sessions for school students using practical examples and interactive methods to introduce programming fundamentals.
+          </p>
+
+          <div class="exp-specs-grid">
+            <div class="exp-spec-block">
+              <span class="exp-spec-label">TOPICS COVERED</span>
+              <div class="exp-spec-text">
+                Python Basics · Variables · Data Types · Operators · Conditionals · Loops
+              </div>
+            </div>
+
+            <div class="exp-spec-block">
+              <span class="exp-spec-label">SKILLS DEVELOPED</span>
+              <div class="exp-spec-text">
+                Communication · Teaching · Leadership · Classroom Management
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         EDUCATION (EDITORIAL TIMELINE)
+         ==================================================================== -->
+    <section id="education" aria-labelledby="edu-heading">
+      <div class="container">
+        <span class="section-eyebrow">ACADEMICS</span>
+        <h2 class="section-heading-large" id="edu-heading">Education</h2>
+
+        <div class="education-timeline-list">
+          
+          <div class="education-timeline-row">
+            <span class="edu-year">2025 — 2029</span>
+            <div>
+              <h3 class="edu-degree-title">B.Tech Computer Science & Engineering</h3>
+              <div class="edu-inst-name">Lovely Professional University · Punjab, India</div>
+            </div>
+            <span class="edu-score-badge">CGPA 9.2</span>
+          </div>
+
+          <div class="education-timeline-row">
+            <span class="edu-year">2022 — 2024</span>
+            <div>
+              <h3 class="edu-degree-title">Higher Secondary Education</h3>
+              <div class="edu-inst-name">Maharaja College</div>
+            </div>
+            <span class="edu-score-badge">80%</span>
+          </div>
+
+          <div class="education-timeline-row">
+            <span class="edu-year">2022</span>
+            <div>
+              <h3 class="edu-degree-title">Secondary Education</h3>
+              <div class="edu-inst-name">DAV Public School</div>
+            </div>
+            <span class="edu-score-badge">96%</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         CERTIFICATIONS & ACHIEVEMENTS
+         ==================================================================== -->
+    <section id="certifications" aria-labelledby="cert-heading">
+      <div class="container">
+        
+        <!-- Minimalist Achievements Strip -->
+        <div class="achievements-minimal-strip">
+          <div class="achieve-stat-block">
+            <span class="achieve-large-num">9.2</span>
+            <span class="achieve-stat-label">CGPA</span>
+            <span class="achieve-stat-desc">B.Tech Computer Science & Engineering</span>
+          </div>
+
+          <div class="achieve-stat-block">
+            <span class="achieve-large-num">02</span>
+            <span class="achieve-stat-label">HACKATHONS</span>
+            <span class="achieve-stat-desc">Collaborative prototyping & problem solving</span>
+          </div>
+
+          <div class="achieve-stat-block">
+            <span class="achieve-large-num">30 HRS</span>
+            <span class="achieve-stat-label">COMMUNITY TRAINING</span>
+            <span class="achieve-stat-desc">Python instruction for school students</span>
+          </div>
+        </div>
+
+        <!-- Clean Certificate Image Gallery Grid -->
+        <div style="margin-top: 56px;">
+          <span class="section-eyebrow">VERIFIED COURSEWORK</span>
+          <h3 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 24px;" id="cert-heading">Certifications</h3>
+
+          <div class="cert-gallery-grid">
+            <div class="cert-gallery-card">
+              <div class="cert-image-frame">
+                <span class="cert-placeholder-art">[ Python Certificate Image ]</span>
+              </div>
+              <div class="cert-text-panel">
+                <span class="cert-name-label">Python Programming</span>
+                <span class="cert-meta-year">2025</span>
+              </div>
+            </div>
+
+            <div class="cert-gallery-card">
+              <div class="cert-image-frame">
+                <span class="cert-placeholder-art">[ DBMS Certificate Image ]</span>
+              </div>
+              <div class="cert-text-panel">
+                <span class="cert-name-label">Database Management Systems</span>
+                <span class="cert-meta-year">2025</span>
+              </div>
+            </div>
+
+            <div class="cert-gallery-card">
+              <div class="cert-image-frame">
+                <span class="cert-placeholder-art">[ Time Management Certificate Image ]</span>
+              </div>
+              <div class="cert-text-panel">
+                <span class="cert-name-label">Time Management</span>
+                <span class="cert-meta-year">2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ====================================================================
+         CONTACT SECTION ("LET'S TALK.")
+         ==================================================================== -->
+    <section class="contact-section-layout" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="contact-hero-title" id="contact-title">LET'S TALK.</h2>
+        <p class="contact-sub-text">
+          Interested in software development, practical projects, or technical collaboration?
+        </p>
+
+        <!-- Clean Editorial Links Strip -->
+        <div class="contact-links-horizontal">
+          <div class="contact-col-item">
+            <span class="contact-col-label">EMAIL</span>
+            <a href="mailto:adarshkumarsingh@gmail.com" class="contact-col-link" id="contact-email-link">adarshkumarsingh@gmail.com</a>
+          </div>
+
+          <div class="contact-col-item">
+            <span class="contact-col-label">GITHUB</span>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-col-link" id="contact-github-link">GitHub ↗</a>
+          </div>
+
+          <div class="contact-col-item">
+            <span class="contact-col-label">LINKEDIN</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-col-link" id="contact-linkedin-link">LinkedIn ↗</a>
+          </div>
+
+          <div class="contact-col-item">
+            <span class="contact-col-label">RESUME</span>
+            <a href="assets/Adarsh_Kumar_Singh_Resume.pdf" class="contact-col-link" download target="_blank" rel="noopener noreferrer">Download ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content-row">
+        <div>
+          <div class="footer-author">ADARSH KUMAR SINGH</div>
+          <div class="footer-academic-text">B.Tech CSE · Lovely Professional University</div>
+        </div>
+        <div class="footer-academic-text">
+          Software Development · Web · IoT · AI/ML Exploration
+        </div>
+        <div class="footer-copyright">
+          © 2026
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

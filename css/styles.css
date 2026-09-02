@@ -1,0 +1,1544 @@
+/* ==========================================================================
+   ADARSH KUMAR SINGH — EDITORIAL ENGINEERING PORTFOLIO
+   Design System: Editorial + Engineering (Warm Paper #F5F1EA, Deep Plum #4A1835)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS & COLOR PALETTE
+   -------------------------------------------------------------------------- */
+:root {
+  /* Warm Paper & Editorial Palette */
+  --bg-primary: #F5F1EA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-warm: #EFEBE3;
+  --bg-dark: #241C22;
+  --bg-dark-surface: #2D232B;
+  
+  /* Text Colors */
+  --text-primary: #171717;
+  --text-secondary: #5F5A54;
+  --text-muted: #8C847A;
+  --text-light: #F5F1EA;
+  --text-light-secondary: #C8C1B7;
+  --text-light-muted: #8C8279;
+  
+  /* Accents */
+  --accent-plum: #4A1835;
+  --accent-plum-hover: #632348;
+  --accent-gold: #B58A4A;
+  --accent-gold-subtle: rgba(181, 138, 74, 0.15);
+  
+  /* Status Colors */
+  --status-completed: #1E7E55;
+  --status-completed-bg: rgba(30, 126, 85, 0.1);
+  --status-dev: #A06714;
+  --status-dev-bg: rgba(160, 103, 20, 0.1);
+  --status-proto: #5046A0;
+  --status-proto-bg: rgba(80, 70, 160, 0.1);
+  
+  /* Borders & Dividers */
+  --border-light: #D8D0C5;
+  --border-subtle: #E6DFD5;
+  --border-dark: #3D333B;
+  --border-dark-subtle: #30262E;
+  
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Layout & Spacing */
+  --max-width: 1240px;
+  --header-height: 76px;
+  --section-spacing: 112px;
+  --container-padding: 32px;
+  
+  /* Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px rgba(36, 28, 34, 0.04);
+  --shadow-portrait: 14px 18px 36px rgba(36, 28, 34, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  font-weight: 400;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Faint Paper Texture */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 24px;
+  background: var(--accent-plum);
+  color: var(--text-light);
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--radius-xs);
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-plum);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-plum);
+  outline-offset: 3px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: -0.01em;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT & CONTAINERS
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: var(--section-spacing) 0;
+  position: relative;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--border-light);
+  width: 100%;
+  margin: 0;
+}
+
+/* Section Header Typography */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.section-heading-large {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.section-subtext {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION & HEADER (MATCHING SCREENSHOT)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(245, 241, 234, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 100;
+  transition: height var(--transition-fast);
+}
+
+.site-header.scrolled {
+  height: 68px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-brand {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 4px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--accent-plum);
+}
+
+.nav-resume-action {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+  transition: all var(--transition-fast);
+}
+
+.nav-resume-action:hover {
+  border-color: var(--text-primary);
+  color: var(--accent-plum);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  padding: 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION (EXACT REPRODUCTION OF SCREENSHOT 1)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 64px 0 72px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-editorial-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+  margin-bottom: 18px;
+}
+
+.hero-name-block {
+  margin-bottom: 22px;
+}
+
+.hero-name-first {
+  display: block;
+  font-size: clamp(3.25rem, 6.5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.hero-name-last {
+  display: block;
+  font-size: clamp(3.25rem, 6.5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.hero-statement {
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  color: var(--text-secondary);
+  line-height: 1.45;
+  font-weight: 400;
+  max-width: 580px;
+  margin-bottom: 22px;
+  letter-spacing: -0.015em;
+}
+
+.hero-academic-line {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--accent-plum);
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--accent-plum);
+  transition: all var(--transition-fast);
+}
+
+.hero-btn-primary:hover {
+  background-color: var(--accent-plum-hover);
+  color: var(--text-light);
+  transform: translateY(-1px);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.hero-btn-secondary:hover {
+  border-color: var(--text-primary);
+}
+
+/* Layered Editorial Portrait Frame (Matching Screenshot 1) */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-layered-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+
+.portrait-backdrop-plum {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  border-radius: var(--radius-xs);
+  z-index: 0;
+}
+
+.portrait-frame-main {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background-color: #FAF7F2;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--shadow-portrait);
+  z-index: 1;
+}
+
+.portrait-frame-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portrait-neutral-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #FAF7F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.portrait-monogram {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  background-color: var(--bg-surface);
+  color: var(--accent-plum);
+}
+
+.portrait-caption-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.portrait-caption-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. ABOUT SECTION (EXACT REPRODUCTION OF SCREENSHOT 2)
+   -------------------------------------------------------------------------- */
+.about-editorial-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-left-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.about-right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-lead-p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.about-pullquote {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-style: italic;
+  color: var(--accent-plum);
+  line-height: 1.2;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin: 8px 0;
+}
+
+.about-facts-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding-top: 12px;
+}
+
+.about-fact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fact-title-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fact-title-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. SKILLS SECTION (CONCISE EDITORIAL STACK)
+   -------------------------------------------------------------------------- */
+.skills-editorial-wrapper {
+  margin-top: 40px;
+}
+
+.skills-row-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-row-item {
+  display: grid;
+  grid-template-columns: 70px 220px 1fr;
+  align-items: baseline;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-light);
+  gap: 20px;
+}
+
+.skills-row-item:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.skill-row-num {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.skill-row-category {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.skill-row-techs {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.skills-learning-strip {
+  margin-top: 48px;
+  padding: 24px 28px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.learning-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+}
+
+.learning-items-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.learning-pill {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+}
+
+/* --------------------------------------------------------------------------
+   8. SELECTED WORK (DEEP CASE STUDIES DIRECTLY ON PAGE)
+   -------------------------------------------------------------------------- */
+.projects-quick-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 56px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  overflow-x: auto;
+}
+
+.project-jump-link {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.project-jump-link:hover {
+  border-color: var(--accent-plum);
+  color: var(--accent-plum);
+}
+
+.projects-container-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+/* Base Case Study Block */
+.project-case-study-entry {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+}
+
+/* Top Hero Split */
+.case-study-hero-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding: 44px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.case-study-visual-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: var(--bg-surface-warm);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+}
+
+.case-study-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-study-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.case-category-tag {
+  color: var(--accent-plum);
+  text-transform: uppercase;
+}
+
+.case-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.case-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  color: var(--text-secondary);
+}
+
+.case-short-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Deep Case Study Body: Problem -> Tech -> Result -> Learning */
+.case-study-deep-body {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.case-section-item {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 24px;
+}
+
+.case-section-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.case-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+  margin-bottom: 8px;
+}
+
+.case-text-block {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.case-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.case-bullet-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.case-bullet-icon {
+  color: var(--accent-plum);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.role-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.role-pill {
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+}
+
+.team-note-text {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border-light);
+}
+
+/* 8.2 SMART SAFETY SHOE (DARK PLUM BLOCK) */
+.project-case-study-entry-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dark);
+  overflow: hidden;
+}
+
+.case-study-hero-split-dark {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding: 44px;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.case-study-visual-frame-dark {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: var(--bg-dark-surface);
+  border: 1px solid var(--border-dark);
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+}
+
+.case-study-visual-frame-dark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-title-dark {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-light);
+  line-height: 1.1;
+}
+
+.case-short-desc-dark {
+  font-size: 1.05rem;
+  color: var(--text-light-secondary);
+  line-height: 1.6;
+}
+
+.tech-tag-pill-dark {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  background-color: var(--bg-dark-surface);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  color: var(--text-light-secondary);
+}
+
+.case-study-deep-body-dark {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.case-section-item-dark {
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 24px;
+}
+
+.case-section-item-dark:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.case-section-label-dark {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.case-text-block-dark {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.case-bullet-row-dark {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9375rem;
+  color: var(--text-light-secondary);
+  line-height: 1.6;
+}
+
+.case-bullet-icon-dark {
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Simple Safety Shoe Flow Diagram */
+.simple-flow-diagram {
+  margin: 16px 0;
+  padding: 20px;
+  background-color: var(--bg-dark-surface);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+}
+
+.diagram-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.flow-step-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flow-num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.flow-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.flow-desc {
+  font-size: 0.75rem;
+  color: var(--text-light-muted);
+  line-height: 1.35;
+}
+
+/* 8.3 NAVYUGAL PROGRESSION GRID */
+.navyugal-progression-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.progression-col {
+  padding: 16px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progression-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tag-current { color: var(--accent-plum); }
+.tag-next { color: var(--text-secondary); }
+.tag-exploring { color: var(--accent-gold); }
+
+.progression-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.progression-item-p {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   9. TRAINING & COMMUNITY SECTION
+   -------------------------------------------------------------------------- */
+.experience-entry-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 16px;
+}
+
+.exp-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.exp-org {
+  font-size: 0.9375rem;
+  color: var(--accent-plum);
+  font-weight: 600;
+}
+
+.exp-dates {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.exp-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.exp-specs-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 20px;
+}
+
+.exp-spec-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.exp-spec-text {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   10. EDUCATION TIMELINE
+   -------------------------------------------------------------------------- */
+.education-timeline-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.education-timeline-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 120px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-light);
+  gap: 28px;
+}
+
+.education-timeline-row:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.edu-year {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.edu-degree-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.edu-inst-name {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.edu-score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent-plum);
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   11. CERTIFICATIONS & ACHIEVEMENTS
+   -------------------------------------------------------------------------- */
+.achievements-minimal-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.achieve-stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.achieve-large-num {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent-plum);
+}
+
+.achieve-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.achieve-stat-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.cert-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.cert-gallery-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-image-frame {
+  aspect-ratio: 16 / 11;
+  background-color: var(--bg-surface-warm);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.cert-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cert-placeholder-art {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cert-text-panel {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cert-name-label {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cert-meta-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   12. CONTACT SECTION (LET'S TALK)
+   -------------------------------------------------------------------------- */
+.contact-section-layout {
+  padding: 100px 0;
+}
+
+.contact-hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 0.95;
+}
+
+.contact-sub-text {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.contact-links-horizontal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 36px;
+}
+
+.contact-col-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-col-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-col-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.contact-col-link:hover {
+  color: var(--accent-plum);
+}
+
+/* --------------------------------------------------------------------------
+   13. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding: 40px 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-author {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.footer-academic-text {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-right {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .portrait-layered-wrapper {
+    max-width: 280px;
+  }
+
+  .about-editorial-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .case-study-hero-split,
+  .case-study-hero-split-dark {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .case-study-deep-body,
+  .case-study-deep-body-dark {
+    padding: 32px;
+  }
+
+  .diagram-steps-grid,
+  .navyugal-progression-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .education-timeline-row {
+    grid-template-columns: 120px 1fr 100px;
+    gap: 16px;
+  }
+
+  .contact-links-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 64px;
+    --container-padding: 20px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    display: none;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-resume-action {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero-name-first,
+  .hero-name-last {
+    font-size: 2.75rem;
+  }
+
+  .skills-row-item {
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+  }
+
+  .skill-row-techs {
+    grid-column: 2;
+  }
+
+  .about-facts-row,
+  .cert-gallery-grid,
+  .achievements-minimal-strip,
+  .contact-links-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram-steps-grid,
+  .navyugal-progression-box {
+    grid-template-columns: 1fr;
+  }
+
+  .education-timeline-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .edu-score-badge {
+    text-align: left;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. ACCESSIBILITY & PRINT
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .site-header,
+  .hero-actions,
+  .paper-texture {
+    display: none !important;
+  }
+
+  section {
+    padding: 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .project-case-study-entry,
+  .project-case-study-entry-dark {
+    border: 1px solid #ccc;
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
